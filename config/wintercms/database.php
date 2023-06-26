@@ -46,12 +46,6 @@ return [
 
     'connections' => [
 
-        'sqlite' => [
-            'driver'   => 'sqlite',
-            'database' => env('SQLITE_PATH', 'storage/database.sqlite'),
-            'prefix'   => '',
-        ],
-
         'mysql' => [
             'driver'     => 'mysql',
             'engine'     => 'InnoDB',

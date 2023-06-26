@@ -22,9 +22,7 @@ USER www-data
 # Install Winter CMS
 RUN composer create-project wintercms/winter . --no-interaction --no-cache && \
 	composer clearcache && \
-	echo 'APP_ENV=docker' > .env && \
-	touch storage/database.sqlite && \
-	chmod 666 storage/database.sqlite
+	echo 'APP_ENV=docker' > .env
 
 FROM base
 

@@ -15,10 +15,9 @@ services:
             - 'wintercms:/var/www/html'
     
     wintercms:
-        image: docker.io/zaxbux/wintercms:php7.4-fpm-alpine
-        environment:
-            APP_DEBUG: 1
+        image: lineblocs/wintercms:master
+        env_file: .env
         volumes:
             - 'wintercms:/var/www/html'
-            #- './storage/database.sqlite:/var/www/html/storage/database.sqlite'
+            #- './config/database.php:/var/www/html/config/database.php'
 
