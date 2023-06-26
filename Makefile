@@ -2,7 +2,8 @@
 phpver=7.4
 
 #vars
-IMAGENAME=zaxbux/wintercms
+#IMAGENAME=zaxbux/wintercms
+IMAGENAME=lineblocs/wintercms
 REPO=docker.io
 IMAGEFULLNAME=${REPO}/${IMAGENAME}
 
@@ -20,13 +21,10 @@ help:
 
 .DEFAULT_GOAL := all
 
-build-fpm:
-		@docker build --pull --build-arg PHP_VERSION=${phpver} -t ${IMAGEFULLNAME}:php${phpver}-fpm -f php${phpver}/fpm/Dockerfile .
-
-build-fpm-alpine:
-		@docker build --pull --build-arg PHP_VERSION=${phpver} -t ${IMAGEFULLNAME}:php${phpver}-fpm-alpine -f php${phpver}/fpm-alpine/Dockerfile .
+build:
+		@docker build --pull --build-arg PHP_VERSION=${phpver} -t ${IMAGEFULLNAME}:master -f php${phpver}/fpm-alpine/Dockerfile .
 
 push:
-		@docker push ${IMAGEFULLNAME}
+		@docker push ${IMAGEFULLNAME}:master
 
 all: build push
