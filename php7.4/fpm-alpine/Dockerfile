@@ -26,7 +26,6 @@ FROM base
 
 COPY --from=builder /var/www/html /var/www/html
 COPY config/wintercms /var/www/html/config/docker
-COPY config/wintercms/database.php /var/www/html/config/database.php
 
 COPY config/supervisor/supervisord.conf /etc/supervisord.conf
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint

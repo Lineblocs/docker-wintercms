@@ -5,6 +5,7 @@ echo "ENV is: "
 printenv
 
 cat config/database.php
+cat config/docker/database.php
 php artisan config:clear
 php artisan config:cache
 php artisan winter:up

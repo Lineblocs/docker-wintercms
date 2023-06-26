@@ -22,7 +22,7 @@ help:
 .DEFAULT_GOAL := all
 
 build:
-		@docker build --no-cache --pull --build-arg PHP_VERSION=${phpver} -t ${IMAGEFULLNAME}:master -f php${phpver}/fpm-alpine/Dockerfile .
+		@docker build --build-arg PHP_VERSION=${phpver} -t ${IMAGEFULLNAME}:master -f php${phpver}/fpm-alpine/Dockerfile .
 
 push:
 		@docker push ${IMAGEFULLNAME}:master
